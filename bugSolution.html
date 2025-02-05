@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    //Correct way to add event listener using an arrow function (lexical this)
+    document.getElementById("myDiv").addEventListener("click", () => {
+      alert(this.id); // this correctly refers to the div
+    });
+    //Alternative solution using bind()
+    //document.getElementById("myDiv").addEventListener("click", function() {
+      //alert(this.id); // this correctly refers to the div
+    //}.bind(document.getElementById("myDiv")));
+  </script>
+</body>
+</html>
