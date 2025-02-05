@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    //Incorrect way to add event listener, missing "this" context.
+    document.getElementById("myDiv").addEventListener("click", function() {
+      alert(this.id); // this will be the window object, not the div
+    });
+  </script>
+</body>
+</html>
